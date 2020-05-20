@@ -14,8 +14,8 @@
           <p class="group-name">{{ $group->name }}</p>
           <p class="group-member">
             メンバー：
-          @foreach($group->users as $user)
-         {{  $user->name }}
+          @foreach($group->users->sortBy('id') as $user)
+          <a href="{{ route('user.show', ['user' => $user]) }}">{{ $user->name }}</a>
           @endforeach
           </p>
           </div>

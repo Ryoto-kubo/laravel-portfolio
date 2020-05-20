@@ -8,10 +8,18 @@
   <div class="groups">
     @foreach ($groups as $group)
     <div class="group">
-      <a href="{{ route('group.show', ['group' => $group]) }}">
-        <p class="group__name">{{ $group->name }}</p>
-        <p class="group__latest-message">最新のメッセージ</p>
-      </a>
+      <div style="padding-top: 10px;">
+        <a href="{{ route('group.show', ['group' => $group]) }}">
+          <p class="group__name">{{ $group->name }}</p>
+        </a>
+      </div>
+      <div class="group__image">
+        @if ($group->image !== null)
+        <img src="/storage/images/{{ $group->image }}" alt="noimage">
+        @else
+        <img src="/images/noimageblack.png" alt="noimage">
+        @endif
+      </div>
     </div>
     @endforeach
   </div>

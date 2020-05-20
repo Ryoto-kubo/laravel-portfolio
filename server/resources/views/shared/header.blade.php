@@ -12,7 +12,7 @@
       @endguest
       @auth
         <li><a href="{{ route('user.show', ['user' => Auth::id()]) }}">{{ Auth::user()->name }}</a></li>
-        <li><a href="#">プロフィール編集</a></li>
+        <li><a href="{{ route('user.edit', ['user' => Auth::id()]) }}">プロフィール編集</a></li>
         <li>
           <form name="logout" id="logout-button" method="POST" action="{{ route('logout') }}">
             @csrf

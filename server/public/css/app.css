@@ -801,7 +801,8 @@ form .select-box.selected select {
 .text-box textarea,
 .text-box input[type=text],
 .text-box input[type=email],
-.text-box input[type=password] {
+.text-box input[type=password],
+.text-box input[type=date] {
   font: 15px/24px sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -813,26 +814,27 @@ form .select-box.selected select {
   margin-top: 10px;
 }
 
-.text-box textarea::-webkit-input-placeholder, .text-box input[type=text]::-webkit-input-placeholder, .text-box input[type=email]::-webkit-input-placeholder, .text-box input[type=password]::-webkit-input-placeholder {
+.text-box textarea::-webkit-input-placeholder, .text-box input[type=text]::-webkit-input-placeholder, .text-box input[type=email]::-webkit-input-placeholder, .text-box input[type=password]::-webkit-input-placeholder, .text-box input[type=date]::-webkit-input-placeholder {
   color: #aaaaaa;
 }
 
-.text-box textarea::-moz-placeholder, .text-box input[type=text]::-moz-placeholder, .text-box input[type=email]::-moz-placeholder, .text-box input[type=password]::-moz-placeholder {
+.text-box textarea::-moz-placeholder, .text-box input[type=text]::-moz-placeholder, .text-box input[type=email]::-moz-placeholder, .text-box input[type=password]::-moz-placeholder, .text-box input[type=date]::-moz-placeholder {
   color: #aaaaaa;
 }
 
-.text-box textarea:-ms-input-placeholder, .text-box input[type=text]:-ms-input-placeholder, .text-box input[type=email]:-ms-input-placeholder, .text-box input[type=password]:-ms-input-placeholder {
+.text-box textarea:-ms-input-placeholder, .text-box input[type=text]:-ms-input-placeholder, .text-box input[type=email]:-ms-input-placeholder, .text-box input[type=password]:-ms-input-placeholder, .text-box input[type=date]:-ms-input-placeholder {
   color: #aaaaaa;
 }
 
-.text-box textarea::-ms-input-placeholder, .text-box input[type=text]::-ms-input-placeholder, .text-box input[type=email]::-ms-input-placeholder, .text-box input[type=password]::-ms-input-placeholder {
+.text-box textarea::-ms-input-placeholder, .text-box input[type=text]::-ms-input-placeholder, .text-box input[type=email]::-ms-input-placeholder, .text-box input[type=password]::-ms-input-placeholder, .text-box input[type=date]::-ms-input-placeholder {
   color: #aaaaaa;
 }
 
 .text-box textarea::placeholder,
 .text-box input[type=text]::placeholder,
 .text-box input[type=email]::placeholder,
-.text-box input[type=password]::placeholder {
+.text-box input[type=password]::placeholder,
+.text-box input[type=date]::placeholder {
   color: #aaaaaa;
 }
 
@@ -1219,8 +1221,21 @@ textarea::placeholder {
 }
 
 .chat-wrapper .chat-side .groups .group {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #b5b5b5;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+.chat-wrapper .chat-side .groups .group__image {
+  padding-bottom: 10px;
+}
+
+.chat-wrapper .chat-side .groups .group__image img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .chat-wrapper .chat-side .groups .group a {
@@ -1230,12 +1245,6 @@ textarea::placeholder {
 .chat-wrapper .chat-side .groups .group__name {
   font-size: 15px;
   margin-bottom: 5px;
-}
-
-.chat-wrapper .chat-side .groups .group__latest-message {
-  font-size: 11px;
-  color: #aaaaaa;
-  margin-bottom: 10px;
 }
 
 .group-section {

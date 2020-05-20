@@ -16,7 +16,11 @@
           <div class="user-section__top" style="margin-bottom: 15px;">
             <div class="user-section__top--left">
               <div class="user-image">
+                @if ($user->image !== null)
+                <img src="/storage/images/{{ $user->image }}" alt="noimage">
+                @else
                 <img src="/images/noimageblack.png" alt="noimage">
+                @endif
               </div>
               <p>{{ $user->name }}</p>
             </div>

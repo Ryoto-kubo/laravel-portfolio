@@ -21,10 +21,9 @@
             <div class="select-box selected">
               <select>
                 <option value="" hidden>都道府県を選んでください</option>
-                <option value="1">北海道</option>
-                <option value="2">東京</option>
-                <option value="3">名古屋</option>
-                <option value="4">大阪</option>
+                @foreach ($prefectures as $prefecture)
+                <option value="{{ $prefecture->id }}">{{ $prefecture->name }}</option>
+                @endforeach
               </select>
             </div>
           </form>

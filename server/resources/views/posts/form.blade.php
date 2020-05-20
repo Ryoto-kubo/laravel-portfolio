@@ -8,21 +8,24 @@
   <input name="team_name" type="text" placeholder="チーム名を入力して下さい" required value="{{ $post->team_name ?? old('team_name') }}">
 </div>
 <div class="select-box selected">
-  <select>
+  <select name="prefecture_id">
     <option value="" hidden>都道府県を選んでください</option>
-    <option value="1">北海道</option>
-    <option value="2">東京</option>
-    <option value="3">名古屋</option>
-    <option value="4">大阪</option>
+    @foreach ($prefectures as $prefecture)
+    @if ($prefecture->id === $post->prefecture_id)
+    <option value="{{ $prefecture->id }}" selected>{{ $prefecture->name }}</option>
+    @else
+    <option value="{{ $prefecture->id }}">{{ $prefecture->name }}</option>
+    @endif
+    @endforeach
   </select>
 </div>
 <div class="text-box">
   <label class="text-label">活動場所</label>
-  <textarea name="activity_place" placeholder="活動場所を入力して下さい">{{ $post->activity_place ?? old('activity_place') }}</textarea>
+  <textarea name="activity_place" placeholder="活動場所を入力して下さい" rows="1">{{ $post->activity_place ?? old('activity_place') }}</textarea>
 </div>
 <div class="text-box">
   <label class="text-label">活動時間</label>
-  <textarea name="activity_time" type="text" placeholder="活動時間を入力して下さい">{{ $post->activity_time ?? old('activity_time') }}</textarea>
+  <textarea name="activity_time" type="text" placeholder="活動時間を入力して下さい" rows="1">{{ $post->activity_time ?? old('activity_time') }}</textarea>
 </div>
 <div class="text-box">
   <p>詳しい説明</p>

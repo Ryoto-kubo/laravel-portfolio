@@ -41,8 +41,8 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.autocompleteItems.filter(i => {
-        return i.text.toLowerCase().indexOf(this.tag.toLowerCase()) !== -1;
+      return this.autocompleteItems.filter(el => {
+        return el.text.toLowerCase().indexOf(this.tag.toLowerCase()) !== -1;
       });
     },
     tagsJson() {

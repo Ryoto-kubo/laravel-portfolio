@@ -14,7 +14,11 @@
           <div class="user-section__top">
             <div class="user-section__top--left">
               <div class="user-image">
+                @if ($user->image !== null)
+                <img src="/storage/images/{{ $user->image }}" alt="noimage">
+                @else
                 <img src="/images/noimageblack.png" alt="noimage">
+                @endif
               </div>
               <p>{{ $user->name }}</p>
             </div>
@@ -29,7 +33,43 @@
             @endif
           </div>
           <div class="user-section__bottom">
-            <p class="user-position">ポジション：PG</p>
+            @if ( isset($age) )
+              <p class="user-age">
+                年齢：{{ $age }}歳
+              </p>
+            @else
+              <p class="user-age">
+                年齢：設定されていません
+              </p>
+            @endif
+
+            @if (!empty($user->prefecture))
+              <p class="user-prefecture">
+                都道府県：{{ $user->prefecture->name }}
+              </p>
+            @else
+              <p class="user-prefecture">
+                都道府県：設定されていません
+              </p>
+            @endif
+
+            @foreach ($positions as $position)
+              @if ($loop->first)
+              <p class="user-position">
+                ポジション：
+              @endif
+              @if (!empty($position))
+                <span>
+                  {{ $position->name }}
+                  @if (!$loop->last)
+                  /
+                  @endif
+                </span>
+              @endif
+              @if ($loop->last)
+              </p> 
+              @endif
+            @endforeach
             <p class="user-follow">フォロー：<a href="{{ route('user.followings', ['user' => $user]) }}">{{ $user->count_followings }}</a></p>
             <p class="user-follower">フォロワー：<a href="{{ route('user.followers', ['user' => $user]) }}">{{ $user->count_followers }}</a></p>
           </div>

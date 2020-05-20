@@ -2100,8 +2100,8 @@ __webpack_require__.r(__webpack_exports__);
     filteredItems: function filteredItems() {
       var _this = this;
 
-      return this.autocompleteItems.filter(function (i) {
-        return i.text.toLowerCase().indexOf(_this.tag.toLowerCase()) !== -1;
+      return this.autocompleteItems.filter(function (el) {
+        return el.text.toLowerCase().indexOf(_this.tag.toLowerCase()) !== -1;
       });
     },
     tagsJson: function tagsJson() {

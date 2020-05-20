@@ -80,7 +80,12 @@ class GroupController extends Controller
             $group->save();
             $group->users()->sync($request->users);
             $group->users()->attach($user);
-            
+
+            if(!is_null($request['image'])){
+                $file_path = $request->file('image')->store('public/images');
+                $group->image = basename($file_path);
+                $group->save();
+            }
             return redirect()->route('group.show', [
                 'group' => $group,
             ]);

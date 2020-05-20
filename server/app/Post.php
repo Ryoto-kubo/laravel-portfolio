@@ -31,4 +31,9 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
+
+    public function prefecture(): BelongsTo
+    {
+        return $this->belongsTo('App\Prefecture');
+    }
 }

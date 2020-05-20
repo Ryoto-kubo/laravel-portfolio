@@ -39,7 +39,7 @@
               </tr>
               <tr>
                 <th>都道府県</th>
-                <td>都道府県が入ります</td>
+                <td>{{ $post->prefecture->name }}</td>
               </tr>
               <tr>
                 <th>活動場所</th>

@@ -12,12 +12,16 @@
             <div class="group-section__title">
               <p>チャットグループ編集</p>
             </div>
-            <form action="{{ route('group.update', ['group' => $group]) }}" method="POST">
+            <form action="{{ route('group.update', ['group' => $group]) }}" method="POST" enctype="multipart/form-data">
               @method('PATCH')
               @csrf
               <div class="text-box">
                 <label class="text-label">グループ名</label>
                 <input name="name" type="text" placeholder="グループ名を入力して下さい" required value="{{ $group->name ?? old('name') }}">
+              </div>
+              <div class="file-box">
+                <p>画像</p>
+                <input type="file" name="image">
               </div>
               <div class="check-box">
                 <h1>参加ユーザー</h1>
