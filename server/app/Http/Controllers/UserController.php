@@ -22,7 +22,7 @@ class UserController extends Controller
         return view('users.edit');
     }
 
-    public function checkedYourself($request, $user) 
+    public function checkedYourself($request, $user)
     {
         if ($user->id === $request->user()->id)
         {
