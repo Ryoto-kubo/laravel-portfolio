@@ -1,4 +1,5 @@
 import './bootstrap'
+import './multiple'
 import Vue from 'vue'
 import FollowButton from './components/FollowButton'
 import PostTagsInput from './components/PostTagsInput'

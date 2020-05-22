@@ -12,6 +12,7 @@
             <div class="post-section__title">
               <p>ログイン</p>
             </div>
+            @include('error_card_list')
             <form method="POST" action="{{ route('login') }}">
                 @csrf
             

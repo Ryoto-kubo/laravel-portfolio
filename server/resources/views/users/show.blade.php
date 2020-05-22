@@ -78,6 +78,7 @@
           <div class="post-section__title">
             <p>{{ $user->name }}の投稿一覧</p>
           </div>
+          {{ $posts->links('pagination::default') }}
           {{-- 記事のカード --}}
           @foreach ($posts as $post)
           @include('shared/card')

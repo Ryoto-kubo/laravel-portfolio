@@ -12,7 +12,8 @@
             <div class="post-section__title">
               <p>チーム募集を作成</p>
             </div>
-            <form action="{{ route('post.store') }}" method="POST">
+            @include('error_card_list')
+            <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
               @include('posts/form')
               <div class="submit-box">
                 <input type="submit" value="投稿する" class="submit-btn">

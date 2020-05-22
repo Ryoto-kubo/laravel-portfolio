@@ -1,5 +1,6 @@
 @import "reset";
 @import "variables";
+@import "error";
 @import "btn";
 @import "home";
 @import "header";
@@ -11,6 +12,7 @@
 @import "groups";
 @import "post_table";
 @import "follow";
+@import "paginate";
 
 .wrapper {
   width: 100vw;

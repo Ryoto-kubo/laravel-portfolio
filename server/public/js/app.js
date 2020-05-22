@@ -51428,19 +51428,22 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_FollowButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/FollowButton */ "./resources/js/components/FollowButton.vue");
-/* harmony import */ var _components_PostTagsInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/PostTagsInput */ "./resources/js/components/PostTagsInput.vue");
+/* harmony import */ var _multiple__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./multiple */ "./resources/js/multiple.js");
+/* harmony import */ var _multiple__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_multiple__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_FollowButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/FollowButton */ "./resources/js/components/FollowButton.vue");
+/* harmony import */ var _components_PostTagsInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/PostTagsInput */ "./resources/js/components/PostTagsInput.vue");
 
 
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   el: '#app',
   components: {
-    FollowButton: _components_FollowButton__WEBPACK_IMPORTED_MODULE_2__["default"],
-    PostTagsInput: _components_PostTagsInput__WEBPACK_IMPORTED_MODULE_3__["default"]
+    FollowButton: _components_FollowButton__WEBPACK_IMPORTED_MODULE_3__["default"],
+    PostTagsInput: _components_PostTagsInput__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -51662,6 +51665,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostTagsInput_vue_vue_type_template_id_6eca9196_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/multiple.js":
+/*!**********************************!*\
+  !*** ./resources/js/multiple.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('#select').multipleSelect({
+    multiple: true,
+    width: 250,
+    multipleWidth: 70,
+    maxHeight: 140
+  });
+});
 
 /***/ }),
 

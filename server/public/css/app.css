@@ -177,6 +177,19 @@ select {
   vertical-align: middle;
 }
 
+.error {
+  width: 90%;
+  margin: 2em auto;
+  padding: 12px;
+  color: #262626;
+  background: #FFEBE8;
+  border: 2px solid #990000;
+}
+
+.error ul {
+  list-style: none;
+}
+
 .big-btn {
   display: inline-block;
   position: relative;
@@ -558,24 +571,6 @@ select {
 
 .blog-card .details ul li {
   display: inline-block;
-}
-
-.blog-card .details .author:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "\F007";
-}
-
-.blog-card .details .date:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "\F133";
-}
-
-.blog-card .details .tags ul:before {
-  font-family: FontAwesome;
-  content: "\F02B";
-  margin-right: 10px;
 }
 
 .blog-card .details .tags li {
@@ -1297,6 +1292,43 @@ textarea::placeholder {
 .follow-section .follow-user__left p {
   line-height: 50px;
   margin-left: 10px;
+}
+
+.paginationWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+  margin-bottom: 40px;
+}
+
+.paginationWrap ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.paginationWrap ul.pagination li {
+  display: inline;
+  margin-right: 4px;
+}
+
+.paginationWrap ul.pagination li a {
+  color: #2f3859;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.paginationWrap ul.pagination li a.active {
+  background-color: #4b90f6;
+  color: white;
+  border-radius: 40px;
+  width: 38px;
+  height: 38px;
+}
+
+.paginationWrap ul.pagination li a:hover:not(.active) {
+  background-color: #e1e7f0;
+  border-radius: 40px;
 }
 
 .wrapper {

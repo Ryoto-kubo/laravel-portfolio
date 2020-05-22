@@ -13,9 +13,11 @@ class Post extends Model
     protected $fillable = [
         'title',
         'team_name',
+        'image',
         'activity_place',
         'activity_time',
         'description',
+        'prefecture_id'
     ];
     public function user(): BelongsTo
     {

@@ -12,7 +12,8 @@
             <div class="post-section__title">
               <p>チーム募集を編集</p>
             </div>
-            <form action="{{ route('post.update', ['post' => $post]) }}" method="POST">
+            @include('error_card_list')
+            <form action="{{ route('post.update', ['post' => $post]) }}" method="POST" enctype="multipart/form-data">
               @method('PATCH')
               @include('posts/form')
               <div class="submit-box">

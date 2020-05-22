@@ -7,6 +7,11 @@
   <label class="text-label">チーム名</label>
   <input name="team_name" type="text" placeholder="チーム名を入力して下さい" required value="{{ $post->team_name ?? old('team_name') }}">
 </div>
+<div class="file-box">
+  <p>画像</p>
+  <input type="file" name="image">
+</div>
+@if ($post ?? '')
 <div class="select-box selected">
   <select name="prefecture_id">
     <option value="" hidden>都道府県を選んでください</option>
@@ -19,6 +24,16 @@
     @endforeach
   </select>
 </div>
+@else
+<div class="select-box selected">
+  <select name="prefecture_id">
+    <option value="" hidden>都道府県を選んでください</option>
+    @foreach ($prefectures as $prefecture)
+    <option value="{{ $prefecture->id }}">{{ $prefecture->name }}</option>
+    @endforeach
+  </select>
+</div>
+@endif
 <div class="text-box">
   <label class="text-label">活動場所</label>
   <textarea name="activity_place" placeholder="活動場所を入力して下さい" rows="1">{{ $post->activity_place ?? old('activity_place') }}</textarea>

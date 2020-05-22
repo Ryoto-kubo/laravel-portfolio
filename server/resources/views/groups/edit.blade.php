@@ -10,8 +10,9 @@
         <div class="main-container">
           <div class="group-section new-group">
             <div class="group-section__title">
-              <p>チャットグループ編集</p>
+              <p>「{{ $group->name }}」を編集</p>
             </div>
+            @include('error_card_list')
             <form action="{{ route('group.update', ['group' => $group]) }}" method="POST" enctype="multipart/form-data">
               @method('PATCH')
               @csrf
@@ -23,21 +24,18 @@
                 <p>画像</p>
                 <input type="file" name="image">
               </div>
-              <div class="check-box">
-                <h1>参加ユーザー</h1>
-                @foreach ($group_users as $group_user)
-                @if ($group_user->id !== Auth::user()->id)
-                <input name="users[]" value="{{ $group_user->id }}" type="checkbox" checked/>
-                <label>{{ $group_user->name }}</label>
-                @endif
-                @endforeach
-              </div>
-              <div class="check-box">
-                <h1>ユーザーを追加</h1>
-                @foreach ($diff_users as $diff_user)
-                <input name="users[]" value="{{ $diff_user->id }}" type="checkbox"/>
-                <label>{{ $diff_user->name }}</label>
-                @endforeach
+              <div class="text-box">
+                <p style="margin-bottom: 10px;">フォロー中のユーザーを追加</p>
+                <select id="select" name="users[]" multiple="multiple" placeholder="追加するユーザーを選択して下さい">
+                  @foreach ($group_users as $group_user)
+                  @if ($group_user->id !== Auth::user()->id)
+                  <option value="{{ $group_user->id }}" selected>{{ $group_user->name }}</option>
+                  @endif
+                  @endforeach
+                  @foreach ($diff_users as $diff_user)
+                  <option value="{{ $diff_user->id }}">{{ $diff_user->name }}</option>
+                  @endforeach
+                </select>              
               </div>
               <div class="submit-box">
                 <input type="submit" value="更新する" class="submit-btn">

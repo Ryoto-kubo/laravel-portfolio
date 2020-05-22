@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'トップページ')
+@section('title', 'エリア別募集一覧')
 
 @section('content')
   {{-- ヘッダー --}}
@@ -8,20 +8,17 @@
 
   <main class="main-wrapper">
     <div class="main-wrapper__inner">
-      {{-- トップページの画像 --}}
       <div class="main-container">
-        <div class="img-section">
-          <img src="/images/basket5.jpeg" alt="" class="main-image">
-        </div>
-        {{-- 新着投稿 --}}
+        {{-- 投稿一覧 --}}
         <div class="post-section">
           <div class="post-section__title">
-            <p>新着投稿</p>
+            <p>「{{ $region->name }}地方」の募集一覧</p>
           </div>
-          {{ $posts->links('pagination::default') }}
           {{-- 記事のカード --}}
           @foreach ($posts as $post)
+            @if ($post->prefecture->region->name === $region->name)
             @include('shared/card')
+            @endif
           @endforeach
         </div>
       </div>

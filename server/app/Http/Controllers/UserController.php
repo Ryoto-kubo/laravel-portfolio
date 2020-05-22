@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Post;
 use App\Position;
 use App\Prefecture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-// use Intervention\Image\Facades\Image;
-// use App\Services\CheckExtensionServices;
-// use App\Services\FileUploadServices;
 
 class UserController extends Controller
 {
 
     public function show(User $user)
     {
-        $posts = $user->posts->sortByDesc('created_at');
+        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(10);
         $positions = $user->positions;
         $now = date('Ymd');
         $birthday  = $user->birthday;
@@ -61,6 +59,7 @@ class UserController extends Controller
         $user->fill($request->except(['image']));
         $user->prefecture_id = $request->prefecture_id;
         $user->save();
+
         if(!is_null($request['image'])){
             $file_path = $request->file('image')->store('public/images');
             $user->image = basename($file_path);

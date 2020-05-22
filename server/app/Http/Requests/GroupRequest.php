@@ -25,7 +25,16 @@ class GroupRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
+            'image' => 'max:10240|mimes:jpeg,gif,png',
             'users',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'グループ名',
+            'image' => '画像',
         ];
     }
 
